@@ -9,7 +9,7 @@ function submitHandler()
     var currentPrice = inputValues[2].value
     if(initialPrice != '' & stockQuantity != '' & currentPrice != ''){
         if(initialPrice >=0 & stockQuantity >0 & currentPrice >=0){
-            calculateProfitAndLoss(initialPrice,stockQuantity,currentPrice)
+            calculateProfitAndLoss(Number(initialPrice),Number(stockQuantity),Number(currentPrice))
         }
         else{
             showMessage("The input values should be positive")
@@ -24,7 +24,7 @@ function submitHandler()
 function calculateProfitAndLoss(ip,qty,cp){
     if(cp>ip){
         var profit = (cp - ip)*qty
-        var profitPercentage = ((profit/ip)*100).toFixed(2)
+        var profitPercentage = ((profit/(ip*qty))*100).toFixed(2)
         showMessage("Awesome!!!, the profit is "+ profit +" and the percent is " + profitPercentage + "%")
     }
     else if(cp===ip){
@@ -32,7 +32,7 @@ function calculateProfitAndLoss(ip,qty,cp){
     }
     else{
         var loss = (ip - cp)*qty
-        var lossPercentage = ((loss/ip)*100).toFixed(2)
+        var lossPercentage = ((loss/(ip*qty))*100).toFixed(2)
         showMessage("Sorry, the loss is "+ loss +" and the percent is " + lossPercentage + "%")
     }
 

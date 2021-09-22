@@ -29,9 +29,7 @@ body {
     font-size: larger;
     border: 2px solid var(--primary-color);
     background-color:var(--primary-color);
-    width: 20%;
     cursor: pointer;
-    
 }
 label {
     padding: 0.5rem;
@@ -46,7 +44,6 @@ input {
      border-radius: 0.3rem;
      border: 2px solid var(--primary-color);
      font-size: larger;
-     width: 35%;
 
  }
  .opt-message{
